@@ -1,10 +1,16 @@
 import React from 'react'
-
+import Dashboard from './Dashboard'
+import Sidebar from './Sidebar'
 
 const MainPage = () => {
   return (
-    <div><h1>MainPage</h1></div>
+    <div style={{display:'flex'}}>
+        <Sidebar/>
+        <Dashboard/>
+    </div>
   )
 }
 
 export default MainPage
+
+
