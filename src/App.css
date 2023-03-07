@@ -1,3 +1,95 @@
+body{
+  height: 100%;
+}
+
 #form .button{
   background-color: #ee3c30;
+  border: #ee3c30;
+}
+
+
+#page-wrapper {
+  padding-left: 250px;
+}
+
+#sidebar-wrapper {
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  margin-left: -250px;
+  background: #000;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#page-content {
+  width: 100%;
+  height: 100vh;
+  background-color: #eee; 
+  /* margin: 20px; */
+}
+/* 사이드바 스타일 */
+
+.sidebar-nav {
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  text-indent: 1.5em;
+  line-height: 2.8em;
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #ee3c30;
+}
+
+.sidebar-nav li a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav > .sidebar-brand {
+  font-size: 1.3em;
+  line-height: 3em;
+}
+
+.navbar {
+  height:55px;
+  background-color:#fff;
+  box-shadow: #000;
+}
+
+.navbar img{
+  width: 150px;
+  height: 30px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.main-dashboard{
+  padding: 20px;
+}
+
+.navbar-btn{
+  margin-right: 10px;
+}
+
+#page-content button{
+  background-color: #eee;
+  color: black;
+  border:#eee ;
+  margin-right: 15px;
+}
+
+
+.EX-container {
+  display: grid;
+  grid-template-rows: repeat(3, 230px);
+  grid-template-columns: repeat(3, 430px);
+  align-content: start;
 }
