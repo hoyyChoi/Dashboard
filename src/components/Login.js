@@ -1,77 +1,89 @@
-import React, { useState } from 'react'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import React, { useState } from "react";
+import ReactDOM from "react-dom"
 import { useNavigate } from 'react-router-dom';
+import "../css/login.css"
+
+const Login2 = ({setAuth}) => {
+    const [errorMessages, setErrorMessages] = useState({});
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const navigate = useNavigate();
 
 
-const Login = ({setAuth}) => {
+    //실험용 data
+    const data = [
+        {
+            userEmail: "mshin0905@naver.com",
+            password: "pass1"
+        },
+    ];
 
-  const realEmail = "abcd@naver.com";
-  const realPw = "12345";
+    const errors = {
+        uemail : "invalid userEmail",
+        pass : "invalid Password"
+    };
 
-  let [email, setEmail] = useState('');
-  let [pw, setPw] = useState(''); //초기값 공백 
 
-  const navigate = useNavigate();
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setAuth(true)
+        navigate('/')
+        // var {uemail, pass} = document.forms[0];
 
-  const [button, setButton] = useState(true);
-  function changeButton() {
-      email.includes('@') && pw.length >= 4 ? setButton(false) :setButton(true);
-  } //btn disable 해제 조건 
+        // //UserAPI 
+        // const userData = data.find((user) => user.UserEmail === uemail.value);
+        
+        // if (userData) {
+        //     if(userData.password !== pass.value) {
+        //         //Invalid Pw
+        //         setErrorMessages({ name: "pass", message: errors.pass});
+        //     } else {
+        //         setAuth(true)
+        //         isSubmitted(true)
+        //     }
+        // } else {
+        //     //User Not Found
+        //     setErrorMessages({ name: "uemail", message: errors.uemail});
+        // }
+    };
 
-  const spaceHome = (event)=>{
-    setAuth(true)
-    navigate('/')
-  }
+    //JSX Code for Message 
+    const renderErrorMessage = (name) => 
+    name === errorMessages.name && (
+    <div className="error">{errorMessages.message}</div>
+    );
 
-  
-  return (
-    <div style={{display:'flex', justifyContent:"center",alignItems:'center',height:'500px'}}>
-    <div id='form'>
-      <div style={{display:'flex', fontSize:'50px',fontWeight:'800' ,margin:"40px", justifyContent:'center',alignItems:'center', cursor:'pointer', color:'red'}}><img width={350} src='MEDIFLIX.svg'/></div>  
-      
-      <Form onSubmit={(event)=>spaceHome(event)} style={{width:'500px'}}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" style={{fontSize:'20px'}}
-          onChange={ e => {
-            setEmail(e.target.value); 
-          }}
-          onKeyUp = {changeButton}
-          />
-        </Form.Group>
+    //JSX Code for Login form 
+    const renderForm = (
+        
+        <div className="form">
+            <form onSubmit={handleSubmit}>
+                <div className="input-container">
+                    <label>Email Address </label>
+                    <input type="text" name="uemail" required/>
+                    {renderErrorMessage("uemail")}
+                </div>
+                <div className="input-container">
+                    <label>Password </label>
+                    <input type="password" name="pass" required />
+                    {renderErrorMessage("pass")}
+                </div>
+                <div className="button-container">
+                    <input type="submit"/>
+                </div>
+            </form>
+        </div>
+    );
 
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" style={{fontSize:'20px'}}
-          onChange={ e => {
-            setPw(e.target.value);
-          }}
-          onKeyUp = {changeButton}
-          />
-        </Form.Group>
-
-        <Button className="loginButton" variant="danger" type="button" disabled = {button}
-        onClick={e => {
-          if (realEmail === email)
-          {
-            if (realPw === pw) {
-              e.preventDefault();
-              spaceHome();
-            }
-          }
-          else {
-            alert("이메일 혹은 비밀번호가 일치하지 않습니다.");
-          }
-        }}
-        size="lg" style={{float:'right'}}>
-          Login
-        </Button>
-
-      </Form>
-    </div>
-  </div>
-  )
+    return (
+        <div className="login">
+            <div className="login-form">
+            <div style={{display:'flex', fontSize:'50px',fontWeight:'800' ,margin:"40px", justifyContent:'center',alignItems:'center', cursor:'pointer', color:'red'}}><img width={350} src='MEDIFLIX.svg'/></div>  
+                {isSubmitted ? <div>User is Successfully logged in</div> : renderForm}
+            </div>
+        </div>
+    );
 }
 
-export default Login
+export default Login2;
+
+
