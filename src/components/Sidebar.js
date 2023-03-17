@@ -1,22 +1,29 @@
-import React from 'react'
+import React,{useState} from 'react'
+import Collapse from 'react-bootstrap/Collapse';
 
 const Sidebar = () => {
 
-    const sidemenu = ['대시보드', '디자인모드', '사용자관리', '수익관리', '예약', '콘텐츠 관리']
+    const sidemenu = [['대시보드','Home.svg'], ['분석&통계','Analysis.svg'], ['관리','Manage.svg'], ['고객문의','Chatlist.svg'], ['기본설정','Settinglist.svg']]
+    const [open, setOpen] = useState(false);
 
+    
   return (
-    <div id="page-wrapper">
         <div id="sidebar-wrapper">
-            <ul className="sidebar-nav">
-                <li className="sidebar-brand">
-                    <a href="#">MEDIFLIX</a>
-                </li>
+            <div className="sidebar-nav">
                 {sidemenu.map((menu)=>{
-                    return <li><a href="#">{menu}</a></li>
-                })}
-            </ul>
+                    return (
+                    <li onClick={() => setOpen(!open)}>
+                        <div className='menu'>
+                            <div style={{display:'flex'}}>
+                                <img className='icon' width={30} height={30} style={{marginRight:'16px',fill:'blue'}} src={menu[1]}/>
+                                <div style={{marginTop:'2.5px'}}>{menu[0]}</div>
+                            </div>
+                            <div style={{marginTop:'2.5px'}}>+</div>
+                        </div>
+                    </li>
+                )})}
+            </div>
         </div>
-    </div>
   )
 }
 

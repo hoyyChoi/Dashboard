@@ -2,16 +2,9 @@ body{
   height: 100%;
 }
 
-#form .loginButton {
-  margin-top: 10px;
-  padding: 0;
-  width: 250px;
-  height: 35px;
-  border: none;
+#form .button{
   background-color: #ee3c30;
-  color: white;
-  font-size: 17px;
-  border-radius: 5px;
+  border: #ee3c30;
 }
 
 
