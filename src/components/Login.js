@@ -1,39 +1,91 @@
-import React from 'react'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import React, { useState } from "react";
+import ReactDOM from "react-dom"
 import { useNavigate } from 'react-router-dom';
+import "../css/login.css"
 
 const Login = ({setAuth}) => {
+    const [errorMessages, setErrorMessages] = useState({});
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const navigate = useNavigate();
 
 
-  const navigate = useNavigate()
+    //실험용 data
+    const data = [
+        {
+            userEmail: "mshin0905@naver.com",
+            password: "pass1"
+        },
+    ];
 
-  const spaceHome = (event)=>{
-    event.preventDefault()
-    setAuth(true)
-    navigate('/')
-  }
+    const errors = {
+        uemail : "invalid userEmail",
+        pass : "invalid Password"
+    };
 
-  return (
-    <div style={{display:'flex', justifyContent:"center",alignItems:'center',height:'500px'}}>
-    <div id='form'>
-      <div style={{display:'flex', fontSize:'50px',fontWeight:'800' ,margin:"40px", justifyContent:'center',alignItems:'center', cursor:'pointer', color:'red'}}><img width={350} src='MEDIFLIX.svg'/></div>  
-      <Form onSubmit={(event)=>spaceHome(event)} style={{width:'500px'}}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" style={{fontSize:'20px'}}/>
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" style={{fontSize:'20px'}}/>
-        </Form.Group>
-        <Button className='button' variant="danger" size="lg" type="submit" style={{float:'right'}}>
-          Login
-        </Button>
-      </Form>
-    </div>
-  </div>
-  )
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // setAuth(true)
+        // navigate('/')
+        var {uemail, pass} = document.forms[0];
+        //UserAPI 
+        const userData = data.find((user) => user.userEmail === uemail.value);
+        
+        if (userData) {
+            if(userData.password !== pass.value) {
+                //Invalid Pw
+                setErrorMessages({ name: "pass", message: errors.pass});
+            } else {
+                console.log("pass login");
+                setIsSubmitted(true)
+                setAuth(true)
+                navigate('/')
+                var {uemail, pass} = document.forms[0];
+            }
+        } else {
+            //User Not Found
+            setErrorMessages({ name: "uemail", message: errors.uemail});
+        }
+    };
+
+    //JSX Code for Message 
+    const renderErrorMessage = (name) => 
+    name === errorMessages.name && (
+    <div className="error">{errorMessages.message}</div>
+    );
+
+    //JSX Code for Login form 
+    const renderForm = (
+        
+        <div className="form">
+            <form onSubmit={handleSubmit}>
+                <div className="input-container">
+                    <label>Email Address </label>
+                    <input type="text" name="uemail" required/>
+                    {renderErrorMessage("uemail")}
+                </div>
+                <div className="input-container">
+                    <label>Password </label>
+                    <input type="password" name="pass" required />
+                    {renderErrorMessage("pass")}
+                </div>
+                <div className="button-container">
+                    <input type="submit"/>
+                </div>
+            </form>
+        </div>
+    );
+
+    return (
+        <div className="login">
+            <div className="login-form">
+            <div style={{display:'flex', fontSize:'50px',fontWeight:'800' ,margin:"40px", justifyContent:'center',alignItems:'center', cursor:'pointer', color:'red'}}><img width={350} src='MEDIFLIX.svg'/></div>  
+                {isSubmitted ? <div>User is Successfully logged in</div> : renderForm}
+            </div>
+        </div>
+    );
 }
 
-export default Login
+export default Login;
+
+

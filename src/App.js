@@ -1,4 +1,4 @@
-import './App.css';
+import '../src/css/App.css';
 import { useState } from 'react';
 import { Routes,Route, Navigate } from 'react-router-dom';
 import Login from './components/Login';
@@ -18,6 +18,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<PrivateRoute/>}/>
+        {/* <Route path="/login" element={<Login setAuth={setAuth}/>}/> */}
         <Route path="/login" element={<Login setAuth={setAuth}/>}/>
       </Routes>
     </div>
