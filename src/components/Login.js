@@ -3,7 +3,7 @@ import ReactDOM from "react-dom"
 import { useNavigate } from 'react-router-dom';
 import "../css/login.css"
 
-const Login2 = ({setAuth}) => {
+const Login = ({setAuth}) => {
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
     const navigate = useNavigate();
@@ -25,25 +25,27 @@ const Login2 = ({setAuth}) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        setAuth(true)
-        navigate('/')
-        // var {uemail, pass} = document.forms[0];
-
-        // //UserAPI 
-        // const userData = data.find((user) => user.UserEmail === uemail.value);
+        // setAuth(true)
+        // navigate('/')
+        var {uemail, pass} = document.forms[0];
+        //UserAPI 
+        const userData = data.find((user) => user.userEmail === uemail.value);
         
-        // if (userData) {
-        //     if(userData.password !== pass.value) {
-        //         //Invalid Pw
-        //         setErrorMessages({ name: "pass", message: errors.pass});
-        //     } else {
-        //         setAuth(true)
-        //         isSubmitted(true)
-        //     }
-        // } else {
-        //     //User Not Found
-        //     setErrorMessages({ name: "uemail", message: errors.uemail});
-        // }
+        if (userData) {
+            if(userData.password !== pass.value) {
+                //Invalid Pw
+                setErrorMessages({ name: "pass", message: errors.pass});
+            } else {
+                console.log("pass login");
+                setIsSubmitted(true)
+                setAuth(true)
+                navigate('/')
+                var {uemail, pass} = document.forms[0];
+            }
+        } else {
+            //User Not Found
+            setErrorMessages({ name: "uemail", message: errors.uemail});
+        }
     };
 
     //JSX Code for Message 
@@ -84,6 +86,6 @@ const Login2 = ({setAuth}) => {
     );
 }
 
-export default Login2;
+export default Login;
 
 

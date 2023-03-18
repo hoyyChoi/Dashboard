@@ -10,7 +10,7 @@ function App() {
   const [auth,setAuth] = useState(false)
 
   const PrivateRoute = () =>{
-    return auth ? <MainPage/> : <Navigate to="/login2"/>
+    return auth ? <MainPage/> : <Navigate to="/login"/>
   }
 
   
