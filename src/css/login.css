@@ -9,10 +9,9 @@
 
 }
 
-input[type="text"] ,
+.input-container input[type="text"],
 input[type="password"] {
     height: 25px;
-    
     border: 1px solid rgba(0,0,0,0.2);
 }
 
@@ -54,10 +53,6 @@ input[type="submit"]:hover {
     margin-bottom: 20px;
 }
 
-.title {
-    font-size: 25px;
-    margin-bottom: 20px;
-}
 
 .input-container {
     display:flex;

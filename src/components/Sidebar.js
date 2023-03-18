@@ -14,15 +14,16 @@ const Sidebar = () => {
                     return (
                     <li onClick={() => setOpen(!open)}>
                         <div className='menu'>
-                            <div style={{display:'flex'}}>
-                                <img className='icon' width={30} height={30} style={{marginRight:'16px',fill:'blue'}} src={menu[1]}/>
-                                <div style={{marginTop:'2.5px'}}>{menu[0]}</div>
+                            <div style={{display:'flex',alignItems:'center'}}>
+                                <img className='icon' width={20} height={20} style={{marginRight:'5px',fill:'blue'}} src={menu[1]}/>
+                                <div>{menu[0]}</div>
                             </div>
-                            <div style={{marginTop:'2.5px'}}>+</div>
+                            <div>+</div>
                         </div>
                     </li>
                 )})}
             </div>
+            <div className='toggle'>토글?(굳이)</div>
         </div>
   )
 }
