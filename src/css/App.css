@@ -77,7 +77,8 @@ body{
 }
 
 .toggle{
-  border-top: 1px solid #E4E7ED;
+  border-top
+  : 1px solid #E4E7ED;
   margin-top: 469px;
 }
 
@@ -321,6 +322,21 @@ body{
   line-height: 16px;
   display: flex;
   align-items: center;
+}
+
+.video-view .top{
+  color:#ffffff;
+  font-size:12px;
+  font-weight:500;
+  border:0.8px solid #2F384A;
+  width:48px; 
+  height:24px;
+  border-radius:10px;
+  margin-left:10px;
+  align-items:center;
+  display:flex;
+  justify-content:center;
+  background-color:#2F384A;
 }
 
 .pre-video{
