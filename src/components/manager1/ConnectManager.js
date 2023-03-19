@@ -1,5 +1,5 @@
 import React from 'react'
-import Connector from './\bConnector'
+import Connector from './Connector'
 
 const ConnectManager = () => {
 

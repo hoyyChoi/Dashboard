@@ -1,8 +1,40 @@
 import React from 'react'
 import TodayCard from './TodayCard'
 
+
+
+//Comma Separator 
+const numberWithCommas = (x) => {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+const randNumber = () => {
+
+}
+
+
 const TodayStatus = () => {
-  return (
+    const data1= {
+        title:"방문자",
+        number1:numberWithCommas(34242343),
+        number2:numberWithCommas(174),
+        number3:numberWithCommas(89)
+    };
+    const data2= {
+        title:"영상 조회",
+        number1:numberWithCommas(3921243),
+        number2:numberWithCommas(90),
+        number3:numberWithCommas(12)
+    };
+    const data3= {
+        title:"신규 가입자",
+        number1:numberWithCommas(7654554),
+        number2:numberWithCommas(132),
+        number3:numberWithCommas(69)
+    };
+
+
+return (
     <div className='todayStatus'>
         <div className='status-header'>
             <header>
@@ -17,9 +49,21 @@ const TodayStatus = () => {
             </header>
         </div>
         <div className='status-card'>
-            <div className='card1'><TodayCard/></div>
-            <div className='card2'><TodayCard/></div>
-            <div className='card3'><TodayCard/></div>
+            <div className='card1'>
+                <TodayCard
+                title={data1.title} number1={data1.number1} number2={data1.number2} number3={data1.number3}>
+                </TodayCard>
+            </div>
+            <div className='card2'>
+                <TodayCard 
+                title={data2.title} number1={data2.number1} number2={data2.number2} number3={data2.number3}>
+                </TodayCard>
+            </div>
+            <div className='card3'>
+                <TodayCard 
+                title={data3.title} number1={data3.number1} number2={data3.number2} number3={data3.number3}>
+                </TodayCard>
+            </div>
         </div>
     </div>
   )
