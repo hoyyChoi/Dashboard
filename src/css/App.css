@@ -236,9 +236,31 @@ body{
   border-bottom-left-radius: 3px;
 }
 
-.compare .updown{
+.compare{
   color:#FF3527 ;
 }
+
+.updown{
+  color:#FF3527 ;
+  margin-right:10px;
+  margin-top:5px;
+  padding-bottom:5px;
+  position:absolute;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  top:'50%'
+}
+
+.todayVector {
+  position:absolute;
+  display:flex;
+  padding-bottom:5px;
+  justify-content:center;
+  align-items:center;
+  margin-left: 5px;
+}
+
 
 .card3 .compare{
   border-bottom-right-radius: 10px;

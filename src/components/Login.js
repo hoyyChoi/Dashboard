@@ -70,7 +70,7 @@ const Login = ({setAuth}) => {
                     {renderErrorMessage("pass")}
                 </div>
                 <div className="button-container">
-                    <input type="submit"/>
+                    <input type="Submit" value="Log In"/>
                 </div>
             </form>
         </div>
