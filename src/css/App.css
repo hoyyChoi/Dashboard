@@ -657,7 +657,7 @@ body{
   border-bottom-right-radius: 10px;
 }
 
-.header .title{
+#example-collapse-text .title{
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -667,7 +667,7 @@ body{
   color: #2F384A;
 }
 
-.header .option{
+#example-collapse-text .option{
   display: flex;
   justify-content: space-between;
   font-style: normal;
@@ -815,4 +815,56 @@ body{
   cursor: pointer;
 }
 
+
+.chartline-button{
+  float: right;
+  margin-right: 24px;
+  margin-top: 24px;
+}
+
+.chart-button{
+  width: 100px;
+  height: 30px;
+  margin-right: 5px;
+  background: #F7F8FA;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  color: #6B7A99;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.016);
+  border-radius: 4px;
+}
+
+.chart-button:hover{
+  background: rgba(51, 97, 255, 0.2);
+  border: 1px solid #3361FF;
+  border-radius: 4px;
+  color: #3361FF;
+}
+
+.chartline-button .selectBtn{
+  background: rgba(51, 97, 255, 0.2);
+  border: 1px solid #3361FF;
+  border-radius: 4px;
+  color: #3361FF;
+  width: 93px;
+}
+
+/* .chartline-button .original{
+  width: 93px;
+}
+
+.chartline-button .vod{
+  width: 59px;
+}
+
+
+.chartline-button .drug{
+  width: 104px;
+}
+
+.chartline-button .life{
+  width: 57px;
+} */
 
