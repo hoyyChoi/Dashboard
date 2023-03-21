@@ -231,7 +231,6 @@ body{
   padding-left: 24px;
   padding-top: 17.5px;
   background: rgba(255, 53, 39, 0.1);
-  border-left: 6px solid #FF3527;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
@@ -291,7 +290,6 @@ body{
 .card3 .compare{
   border-bottom-right-radius: 10px;
   background: rgba(51, 97, 255, 0.1);
-  border-left: 6px solid #3361FF;
 }
 
 .card3 .compare .title3 {
