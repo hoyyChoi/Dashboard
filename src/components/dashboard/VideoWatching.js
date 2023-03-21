@@ -1,9 +1,13 @@
 import React from 'react'
 
-const VideoWatching = () => {
+const VideoWatching = (props) => {
+
+
   return (
     <div className='pre-video'>
-        <div className='video-thumbnail'></div>
+        <div className='video-thumbnail'>
+          <img id="video-img" src={props.thumbnail}></img>
+        </div>
         <div style={{position:'relative'}}>
           <div className='video-title'>
               <div className='video-name'>척추닥터 김사부</div>
@@ -15,7 +19,7 @@ const VideoWatching = () => {
           <div className='video-tags'>
             <div className='tag-items'>내과</div>
             <div className='tag-items'>과자</div>
-            <div className='tag-items'>자고싶다</div>
+            <div className='tag-items'>50대</div>
           </div>
         </div>
     </div>
