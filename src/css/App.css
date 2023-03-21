@@ -171,7 +171,6 @@ body{
   margin: auto;
   display: flex;
   justify-content: space-between;
-  
 }
 
 .status-header{
@@ -652,6 +651,170 @@ body{
   padding-top: 20px;
   cursor: pointer;
 }
+
+.connectManager .messanger:hover{
+  filter: invert(64%) sepia(99%) saturate(6926%) hue-rotate(225deg) brightness(109%) contrast(105%);
+}
+
+
+.notepad-container{
+  width: 333px;
+  height: 789px;  
+  filter: drop-shadow(-2px 0px 5px rgba(38, 51, 77, 0.03));
+  background-color: #ffffff;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: relative;
+}
+
+.notepad-header{
+  width: 333px;
+  height: 57px;
+  border-bottom: 1px solid #E4E7ED;
+}
+.notepad-header header{
+  width: 285px;
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  align-items: center;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.memo-container{
+  width: 285px;
+  margin: auto;
+  border-bottom: 1px solid #E4E7ED;
+  margin-top: 16px;
+  padding-bottom: 16px;
+}
+
+.memo-title{
+  display: flex;
+  height: 32px;
+  justify-content: space-between;
+}
+
+.left-memo-title{
+  display: flex;
+  align-items: center;
+}
+
+.left-memo-title .name{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  color: #6B7A99;
+  margin-left: 16px;
+}
+
+.left-memo-title .time{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #6B7A99;
+  margin-left: 8px;
+}
+
+.right-memo-title{
+  display: flex;
+  align-items: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: right;
+  color: #6B7A99;
+}
+
+.right-memo-title .offCheck{
+  width: 18.89px;
+  height: 18.89px;
+  border-radius: 50%;
+  background: #F7F8FA;
+  /* background: rgba(51, 97, 255, 0.2); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.right-memo-title .onCheck{
+  width: 18.89px;
+  height: 18.89px;
+  border-radius: 50%;
+  background: rgba(51, 97, 255, 0.2);
+  /* background: rgba(51, 97, 255, 0.2); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 10px;
+  filter: invert(64%) sepia(99%) saturate(6926%) hue-rotate(225deg) brightness(109%) contrast(105%);
+}
+
+.right-memo-title .offCheck:hover{
+  background: rgba(51, 97, 255, 0.2);
+  filter: invert(64%) sepia(99%) saturate(6926%) hue-rotate(225deg) brightness(109%) contrast(105%);
+}
+
+.memo-text{
+  width: 189px;
+  word-wrap: break-word;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  margin: auto;
+}
+
+.memo-write{
+  position: absolute;
+  width: 285px;
+  height: 179px;
+  bottom: 0;
+  left: 24px;
+}
+
+.memo-write .input-memo-container{
+  display: flex;
+}
+
+.input-memo-container .input-memo{
+  padding: 5px 12px;
+  width: 241px;
+  padding-bottom: 43px;
+  word-wrap: break-word;
+  background: #FFFFFF;
+  border: none;
+  resize: none;
+  border: 1px solid #E4E7ED;
+  border-radius: 2px;
+}
+
+.memo-write .memo-Btn{
+  width: 55px;
+  height: 30px;
+  color: #ffffff;
+  background: #3361FF;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+  border-radius: 4px;
+  float: right;
+  margin-top:24px ;
+}
+
+.memo-write .memo-Btn:hover{
+  background: #6581dc;
+}
+
 
 .liveClose{
   background: #FFFFFF;

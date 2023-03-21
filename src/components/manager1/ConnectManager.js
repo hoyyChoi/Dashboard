@@ -1,9 +1,11 @@
 import React from 'react'
 import Connector from './Connector'
 
-const ConnectManager = () => {
+const ConnectManager = ({setOpen}) => {
 
-    const chan = false
+   const openChat = ()=>{
+      setOpen(true)
+   }
 
   return (
     <div className='connectManager'>
@@ -12,7 +14,7 @@ const ConnectManager = () => {
         <Connector/>
         <Connector/>
         <div className='messanger'>
-            <img src='Chat.svg'/>
+            <img onClick={openChat} src='Chat.svg'/>
         </div>
     </div>
   )
