@@ -15,11 +15,14 @@ return (
                 <div style={{marginBottom:'6.5px'}}>3월 누적</div>
                 <div>{props.number2}</div>
             </div>
+            <div className="bar">
+                    <img id="barRed" src={props.bar}></img>
+            </div>
             <div className='compare'>
                 <div className="title3">2월 보다</div>
                 <div className='updown'>
                     <div className='number3'>{props.number3} </div>
-                    <img id="UpVector" width={10} src='red_vector.svg'></img>
+                    <img id="UpVector" width={10} src={props.vector}></img>
                 </div> 
             </div>
         </div>
