@@ -225,7 +225,7 @@ body{
   padding-top: 17.5px;
 }
 
-.compare{
+.card1 .compare{
   width: 142.3px;
   height: 83px;
   padding-left: 24px;
@@ -235,6 +235,26 @@ body{
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
+
+.card2 .compare{
+  width: 142.3px;
+  height: 83px;
+  padding-left: 24px;
+  padding-top: 17.5px;
+  background: rgba(255, 53, 39, 0.1);
+}
+
+.card3 .compare{
+  width: 142.3px;
+  height: 83px;
+  padding-left: 24px;
+  padding-top: 17.5px;
+  background: rgba(255, 53, 39, 0.1);
+}
+
+
+
+
 
 .compare{
   color:#FF3527 ;
@@ -255,6 +275,18 @@ body{
   margin-right: 5px;
 }
 
+.card1 .compare .title3 {
+  /* font-size: 13px;
+  font-weight: 500; */
+  color: #6B7A99;
+}
+
+.card2 .compare .title3 {
+  /* font-size: 13px;
+  font-weight: 500; */
+  color: #6B7A99;
+}
+
 
 .card3 .compare{
   border-bottom-right-radius: 10px;
@@ -263,10 +295,17 @@ body{
 }
 
 .card3 .compare .title3 {
+  /* font-size: 13px;
+  font-weight: 500; */
+  color: #6B7A99;
+}
+
+.card3 .compare .number3 {
   color: #3361FF;
 }
 
-.card3 .compare .updown{
+
+.card .compare .updown{
   color: #3361FF;
 }
 
