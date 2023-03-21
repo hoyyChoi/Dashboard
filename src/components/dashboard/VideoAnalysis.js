@@ -4,7 +4,9 @@ import ChartPie from './chart/ChartPie'
 const VideoAnalysis = () => {
   return (
     <div>
-      조회수 분석
+      <div>
+        조회수 분석
+      </div>
       <ChartPie/>
     </div>
   )

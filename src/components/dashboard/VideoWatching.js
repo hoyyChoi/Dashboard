@@ -1,9 +1,13 @@
 import React from 'react'
 
-const VideoWatching = () => {
+const VideoWatching = (props) => {
+
+
   return (
     <div className='pre-video'>
-        <div className='video-thumbnail'></div>
+        <div className='video-thumbnail'>
+          <img id="video-img" src={props.thumbnail}></img>
+        </div>
         <div style={{position:'relative'}}>
           <div className='video-title'>
               <div className='video-name'>척추닥터 김사부</div>

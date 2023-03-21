@@ -328,6 +328,10 @@ body{
   
 }
 
+.video-thumbnail {
+  scale: fill;
+}
+
 .status-header-left .video{
   font-style: normal;
   font-weight: 500;
@@ -387,7 +391,7 @@ body{
   font-weight:500;
   border:0.8px solid #2F384A;
   width:48px; 
-  height:24px;
+  height:20px;
   border-radius:10px;
   margin-left:10px;
   align-items:center;
@@ -404,6 +408,8 @@ body{
 }
 
 .pre-video .video-thumbnail{
+  display:flex;
+  justify-content:center;
   width: 141px;
   height: 85px;
   background-color:#E4E7ED;
