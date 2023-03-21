@@ -19,7 +19,7 @@ const VideoWatching = (props) => {
           <div className='video-tags'>
             <div className='tag-items'>내과</div>
             <div className='tag-items'>과자</div>
-            <div className='tag-items'>자고싶다</div>
+            <div className='tag-items'>50대</div>
           </div>
         </div>
     </div>

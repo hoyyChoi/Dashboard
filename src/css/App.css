@@ -363,6 +363,22 @@ body{
   cursor: pointer;
 }
 
+.video-analysis .title {
+  margin-top: 16px;
+  margin-left: 24px;
+  margin-bottom: 13px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.video-analysis .doughnut {
+  width: 240px;
+  height: 240px;
+}
+
 .video-card{
   display: flex;
 }
@@ -374,11 +390,11 @@ body{
 }
 
 
-.video-view .title{
+.video-view .VideoTitle{
   margin-top: 16px;
   margin-left: 24px;
   margin-bottom: 13px;
-  font-weight: 500;
+  font-weight: bold;
   font-size: 16px;
   line-height: 16px;
   display: flex;
@@ -462,6 +478,7 @@ body{
   justify-content: center;
   margin-right: 4px;
 }
+
 
 
 

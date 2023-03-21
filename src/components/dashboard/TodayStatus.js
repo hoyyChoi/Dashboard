@@ -112,7 +112,7 @@ return (
         <div className='status-header'>
             <header>
                 <div className='status-header-left'>
-                    <div style={{fontSize:'16px',marginRight:'9px',fontWeight:'500',lineHeight:'24px'}}>오늘의 현황</div>
+                    <div style={{fontSize:'16px',marginRight:'9px',fontWeight:'bold',lineHeight:'24px'}}>오늘의 현황</div>
                     <div style={{fontSize:'8px',border:' 0.8px solid #2F384A',width:'34px',height:'16px',borderRadius:'9px',fontWeight:'500',margin:'auto'}}><div style={{zoom:'0.8',textAlign:'center',margin:'1.2px 0'}}>실시간</div></div>
                 </div>
                 <div className='status-header-right'>
