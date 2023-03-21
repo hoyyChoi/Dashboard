@@ -242,7 +242,6 @@ body{
 
 .updown{
   color:#FF3527 ;
-  margin-right:10px;
   margin-top:5px;
   padding-bottom:5px;
   position:absolute;
@@ -252,13 +251,8 @@ body{
   top:'50%'
 }
 
-.todayVector {
-  position:absolute;
-  display:flex;
-  padding-bottom:5px;
-  justify-content:center;
-  align-items:center;
-  margin-left: 5px;
+.number3 {
+  margin-right: 5px;
 }
 
 
@@ -266,6 +260,10 @@ body{
   border-bottom-right-radius: 10px;
   background: rgba(51, 97, 255, 0.1);
   border-left: 6px solid #3361FF;
+}
+
+.card3 .compare .title3 {
+  color: #3361FF;
 }
 
 .card3 .compare .updown{

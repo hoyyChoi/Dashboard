@@ -3,6 +3,7 @@ import React from 'react'
 
 const TodayCard = (props) => {
 
+
 return (
     <container>
         <div class="first">
@@ -15,10 +16,10 @@ return (
                 <div>{props.number2}</div>
             </div>
             <div className='compare'>
-                <div>2월 보다</div>
+                <div className="title3">2월 보다</div>
                 <div className='updown'>
-                    {props.number3} 
-                    <img width={10} src='red_vector.svg'></img>
+                    <div className='number3'>{props.number3} </div>
+                    <img id="UpVector" width={10} src='red_vector.svg'></img>
                 </div> 
             </div>
         </div>
