@@ -888,20 +888,12 @@ body{
   width: 93px;
 }
 
-/* .chartline-button .original{
-  width: 93px;
+.progressBar{
+  height: 35px;
 }
 
-.chartline-button .vod{
-  width: 59px;
+.progressBar .bar{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
 }
-
-
-.chartline-button .drug{
-  width: 104px;
-}
-
-.chartline-button .life{
-  width: 57px;
-} */
-
