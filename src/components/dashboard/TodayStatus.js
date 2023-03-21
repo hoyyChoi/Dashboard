@@ -25,6 +25,7 @@ const TodayStatus = () => {
             secondNum3:numberWithCommas(350000),
 
 
+            //가입자수
             thirdNum1:numberWithCommas(39),
             thirdNum2:numberWithCommas(24320),
             thirdNum3:numberWithCommas(5234),
@@ -42,10 +43,10 @@ const TodayStatus = () => {
             secondNum2:numberWithCommas(4270000),
             secondNum3:numberWithCommas(121000),
 
-
-            thirdNum1:numberWithCommas(39),
-            thirdNum2:numberWithCommas(24320),
-            thirdNum3:numberWithCommas(5234),
+            //가입자수
+            thirdNum1:numberWithCommas(100),
+            thirdNum2:numberWithCommas(24359),
+            thirdNum3:numberWithCommas(6342),
         },
         {
             //index(number) == 2
@@ -57,13 +58,13 @@ const TodayStatus = () => {
 
             //영상조회
             secondNum1:numberWithCommas(270000),
-            secondNum2:numberWithCommas(3870000),
-            secondNum3:numberWithCommas(350000),
+            secondNum2:numberWithCommas(4574300),
+            secondNum3:numberWithCommas(304300),
 
-
-            thirdNum1:numberWithCommas(39),
-            thirdNum2:numberWithCommas(24320),
-            thirdNum3:numberWithCommas(5234),
+            //가입자수
+            thirdNum1:numberWithCommas(20),
+            thirdNum2:numberWithCommas(24339),
+            thirdNum3:numberWithCommas(6322),
         }
     ];
 
