@@ -90,7 +90,10 @@ const VideoAnalysis = () => {
           data={dataDepartment}
           style={{ }} />
       </div>
-
+      <div class='video-analysis-btnline'>
+        <button class='Department'>진료과별</button>
+        <button class='Disease'>질환별</button>
+      </div>
     </div>
 
   )
