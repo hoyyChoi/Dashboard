@@ -129,7 +129,7 @@ body{
 }
 
 .setting{
-  width: 116px;
+  width: 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -374,8 +374,8 @@ body{
 }
 
 .video-analysis .doughnut {
-  width: 240px;
-  height: 240px;
+  width: 250px;
+  height: 250px;
 }
 
 .video-card{

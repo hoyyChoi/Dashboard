@@ -19,6 +19,7 @@ const Navbar = () => {
             <div className='setting'>
                 <img width={20} height={20} style={{cursor:'pointer'}} src='Bell.svg'/>
                 <img width={20} height={20} style={{cursor:'pointer'}} src='Setting.svg'/>
+                <img width={20} height={20} style={{cursor:'pointer'}} src='download.svg'/>
             </div>
         </div>
     </div>
