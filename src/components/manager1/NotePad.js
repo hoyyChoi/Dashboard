@@ -1,28 +1,10 @@
 import React,{useState,useRef,useEffect } from 'react'
 import Memo from './Memo'
 
-const NotePad = ({setOpen}) => {
+const NotePad = ({setOpen,memolist,setMemolist}) => {
 
 
-    const [memolist,setMemolist] = useState([
-        {img:'Mask group.svg',
-         name:'최호연',
-         time:'1시간전',
-         num:3,
-         memo:'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.'
-        },
-        {img:'Mask group.svg',
-         name:'최호연2',
-         time:'2시간전',
-         num:2,
-         memo:'오늘 오전 중으로 자료 넘겨드릴게'
-        },
-        {img:'Mask group.svg',
-         name:'최호연3',
-         time:'2시간전',
-         num:0,
-         memo:'어쩌고 저쩌고 연락드릴'}
-        ])
+
 
     const [text,setText] = useState('')
     const [value,setValue] =useState('')

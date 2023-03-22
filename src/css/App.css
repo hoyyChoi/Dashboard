@@ -135,6 +135,27 @@ body{
   align-items: center;
 }
 
+.setting .alarm{
+  width: 20px;
+  height: 20px;
+  background-color: #EE3C30;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+  border: none;
+  font-size:1.2rem ;
+  cursor: pointer;
+  box-shadow: 0px 10px 30px rgba(136, 51, 255, 0.15);
+  font-style: normal;
+  font-weight: 900;
+  font-size: 8px;
+  line-height: 20px;
+}
 
 
 
@@ -650,9 +671,33 @@ body{
   justify-content: center;
   padding-top: 20px;
   cursor: pointer;
+  position: relative;
 }
 
-.connectManager .messanger:hover{
+.messanger .alarm{
+  width: 30px;
+  height: 30px;
+  background-color:#FF3527;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0.1rem;
+  right: 0.8rem;
+  border: none;
+  font-size:1.2rem ;
+  cursor: pointer;
+  box-shadow: 0px 10px 30px rgba(136, 51, 255, 0.15);
+  font-style: normal;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 20px;
+
+}
+
+.connectManager .messanger img:hover{
   filter: invert(64%) sepia(99%) saturate(6926%) hue-rotate(225deg) brightness(109%) contrast(105%);
 }
 

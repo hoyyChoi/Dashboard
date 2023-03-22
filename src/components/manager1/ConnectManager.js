@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Connector from './Connector'
 
-const ConnectManager = ({setOpen}) => {
+const ConnectManager = ({setOpen,memoCount,appear,setAppear}) => {
+
 
    const openChat = ()=>{
+      setAppear(false)
       setOpen(true)
+
    }
+   
+   
 
   return (
     <div className='connectManager'>
@@ -15,6 +20,7 @@ const ConnectManager = ({setOpen}) => {
         <Connector/>
         <div className='messanger'>
             <img onClick={openChat} src='Chat.svg'/>
+            {appear?<div className="alarm">{memoCount}</div>:<></>}
         </div>
     </div>
   )
