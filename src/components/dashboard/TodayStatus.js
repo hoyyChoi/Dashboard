@@ -8,7 +8,7 @@ const numberWithCommas = (x) => {
 };
 
 
-const TodayStatus = () => {
+const TodayStatus = ({setActive,count,setCount}) => {
 
     const data = [
         {
@@ -73,10 +73,17 @@ const TodayStatus = () => {
 
     function syncFunction() {
         //random Value Index 
-        setNumber(parseInt(Math.random() *  data.length));  
-        
+        // setNumber(parseInt(Math.random() *  data.length));  
+        let num = parseInt(Math.random() *  data.length)
+        setNumber(num)
         //array Index++
         time < realTime.length-1 && setTime((old) => old + 1);
+
+        // sync 이미지 클릭시, 일정 수 넘으면 알람 뜨는 코드
+        if(data[num].firstNum1 === '6,574' || data[num].secondNum1 === '391200' || data[num].thirdNum1 === '100' ){
+            setActive(true)
+            setCount(count+1)
+        }
     }
 
     const img= {

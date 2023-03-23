@@ -135,6 +135,73 @@ body{
   align-items: center;
 }
 
+.animated-bell{
+  display:inline-block;
+  -moz-animation:ringing 2s 9999 ease 1s;
+  -webkit-animation:ringing 2s 9999 ease 1s;
+  -o-animation:ringing 2s 9999 ease 1s;
+  -ms-animation:ringing 2s 9999 ease 1s;
+  animation:ringing 2s 9999 ease 1s;
+  -moz-transform-origin:50% 0;
+  -webkit-transform-origin:50% 0;
+  -o-transform-origin:50% 0;
+  -ms-transform-origin:50% 0;
+  transform-origin:50% 0
+}
+@-moz-keyframes ringing{
+  0%{-moz-transform:rotate(-15deg)}
+  2%{-moz-transform:rotate(15deg)}
+  4%{-moz-transform:rotate(-18deg)}
+  6%{-moz-transform:rotate(18deg)}
+  8%{-moz-transform:rotate(-22deg)}
+  10%{-moz-transform:rotate(22deg)}
+  12%{-moz-transform:rotate(-18deg)}
+  14%{-moz-transform:rotate(18deg)}
+  16%{-moz-transform:rotate(-12deg)}
+  18%{-moz-transform:rotate(12deg)}
+  20%{-moz-transform:rotate(0deg)}
+}
+  @-webkit-keyframes ringing{
+    0%{-webkit-transform:rotate(-15deg)}
+    2%{-webkit-transform:rotate(15deg)}
+    4%{-webkit-transform:rotate(-18deg)}
+    6%{-webkit-transform:rotate(18deg)}
+    8%{-webkit-transform:rotate(-22deg)}
+    10%{-webkit-transform:rotate(22deg)}
+    12%{-webkit-transform:rotate(-18deg)}
+    14%{-webkit-transform:rotate(18deg)}
+    16%{-webkit-transform:rotate(-12deg)}
+    18%{-webkit-transform:rotate(12deg)}
+    20%{-webkit-transform:rotate(0deg)}
+  }
+  @-ms-keyframes ringing{
+    0%{-ms-transform:rotate(-15deg)}
+    2%{-ms-transform:rotate(15deg)}
+    4%{-ms-transform:rotate(-18deg)}
+    6%{-ms-transform:rotate(18deg)}
+    8%{-ms-transform:rotate(-22deg)}
+    10%{-ms-transform:rotate(22deg)}
+    12%{-ms-transform:rotate(-18deg)}
+    14%{-ms-transform:rotate(18deg)}
+    16%{-ms-transform:rotate(-12deg)}
+    18%{-ms-transform:rotate(12deg)}
+    20%{-ms-transform:rotate(0deg)}
+  }
+  @keyframes ringing{
+    0%{transform:rotate(-15deg)}
+    2%{transform:rotate(15deg)}
+    4%{transform:rotate(-18deg)}
+    6%{transform:rotate(18deg)}
+    8%{transform:rotate(-22deg)}
+    10%{transform:rotate(22deg)}
+    12%{transform:rotate(-18deg)}
+    14%{transform:rotate(18deg)}
+    16%{transform:rotate(-12deg)}
+    18%{transform:rotate(12deg)}
+    20%{transform:rotate(0deg)}
+  }
+
+
 .setting .alarm{
   width: 20px;
   height: 20px;
@@ -145,10 +212,9 @@ body{
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: -1rem;
-  right: -1rem;
+  top: -0.7rem;
+  right: -0.9rem;
   border: none;
-  font-size:1.2rem ;
   cursor: pointer;
   box-shadow: 0px 10px 30px rgba(136, 51, 255, 0.15);
   font-style: normal;
@@ -687,7 +753,6 @@ body{
   top: 0.1rem;
   right: 0.8rem;
   border: none;
-  font-size:1.2rem ;
   cursor: pointer;
   box-shadow: 0px 10px 30px rgba(136, 51, 255, 0.15);
   font-style: normal;

@@ -4,14 +4,14 @@ import Video from './dashboard/Video'
 import UserInfo from './dashboard/UserInfo'
 import UserTraffic from './dashboard/UserTraffic'
 
-const Dashboard = () => {
+const Dashboard = ({setActive,count,setCount}) => {
 
    
 
 
   return (
     <div className="dashboard">
-        <TodayStatus />
+        <TodayStatus setActive={setActive} count={count} setCount={setCount}/>
         <Video />
         <div className='user'>
           <UserTraffic/>
