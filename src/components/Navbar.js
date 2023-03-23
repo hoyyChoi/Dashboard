@@ -1,10 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react'
 
 
-const Navbar = () => {
-
-
+const Navbar = ({active,count}) => {
 
   return (
     <div className='navbar'>
@@ -17,7 +14,10 @@ const Navbar = () => {
         </div>
         <div className='navbar-right'>
             <div className='setting'>
-                <img width={20} height={20} style={{cursor:'pointer'}} src='Bell.svg'/>
+                <div style={{position:'relative'}}>
+                    <img className={active?'animated-bell':''} width={20} height={20} style={{cursor:'pointer'}} src='Bell.svg'/>
+                    {active?<div className="alarm">{count}</div>:<></>}
+                </div>
                 <img width={20} height={20} style={{cursor:'pointer'}} src='Setting.svg'/>
                 <img width={20} height={20} style={{cursor:'pointer'}} src='download.svg'/>
             </div>

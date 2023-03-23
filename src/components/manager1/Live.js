@@ -13,7 +13,7 @@ const Live = () => {
             aria-controls="example-collapse-text"
             aria-expanded={open}>
                 <div style={{display:'flex',alignItems:'center'}}>Live<div className='circle'></div></div>
-                <div>{open ? '-':'+'}</div>
+                <div  style={{display:'flex',alignItems:'center'}}><img src={open ? 'Arrow1.svg':'Arrow2.svg'}/></div>
             </header>
         </div>
         <Collapse in={open}>
