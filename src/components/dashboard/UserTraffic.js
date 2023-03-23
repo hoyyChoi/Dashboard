@@ -6,7 +6,7 @@ import { ko } from "date-fns/esm/locale";
 import moment from "moment";
 import styled from 'styled-components';
 import Collapse from 'react-bootstrap/Collapse';
-import {getPageViews,getUv} from '../../remote/server'
+import {postPageViews,postUv} from '../../remote/server'
 
 const UserTraffic = () => {
     const [open,setOpen] = useState(false)
@@ -34,14 +34,14 @@ const UserTraffic = () => {
 
     useEffect(()=>{
         if(selected === false){
-            getPageViews({category:btn,date:date})
+            postPageViews({category:btn,date:date})
             .then(res=>{
                 setData(res.data.result)
                 console.log(res.data.result)
             })
             .catch((err)=>console.log(err));
         }else{
-            getUv({date:date})
+            postUv({date:date})
             .then(res=>{
                 setData(res.data.result)
                 console.log(res.data.result)

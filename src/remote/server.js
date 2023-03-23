@@ -5,9 +5,9 @@ const mediflixAxios = axios.create({
 });
 
 
-const getPageViews=({category,date})=>mediflixAxios.post('/pageViews',{category,date});
+const postPageViews=({category,date})=>mediflixAxios.post('/pageViews',{category,date});
 
 
-const getUv=({date})=>mediflixAxios.post('/uv',{date});
+const postUv=({date})=>mediflixAxios.post('/uv',{date});
 
-export {getPageViews,getUv}
+export {postPageViews,postUv}
