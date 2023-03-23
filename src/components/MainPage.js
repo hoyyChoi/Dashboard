@@ -12,7 +12,7 @@ const MainPage = () => {
 
 
   return (
-    <div>
+    <div className='mainpage'>
       <Navbar active={active} count={count} />
       <Sidebar />
       <Dashboard setActive={setActive} count={count} setCount={setCount}/>

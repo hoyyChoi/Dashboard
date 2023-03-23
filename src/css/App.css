@@ -7,6 +7,12 @@ body{
   width: 100%;
 }
 
+.mainpage{
+  width: 1440px;
+  margin: auto;
+}
+
+
 #form .loginButton {
   margin-top: 10px;
   padding: 0;
@@ -91,7 +97,7 @@ body{
   display: flex;
   justify-content: space-between;
   margin-top: 24px;
-  margin-left: 18px;
+  margin-left: 24px;
   margin-right: 24px;
   
 }
