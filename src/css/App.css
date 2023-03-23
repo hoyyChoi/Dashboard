@@ -55,9 +55,17 @@ body{
   justify-content: center;
 }
 
+.sidebar-nav .selectMenu{
+  color: #3361FF;
+}
+
+.sidebar-nav .selectMenu .icon{
+  filter: invert(29%) sepia(89%) saturate(2692%) hue-rotate(221deg) brightness(100%) contrast(104%);
+}
+
 .sidebar-nav li:hover {
   color: #3361FF;
-  background: rgba(255, 255, 255, 0.2);
+  /* background: rgba(255, 255, 255, 0.2); */
 }
 
 .sidebar-nav li:hover .icon{
