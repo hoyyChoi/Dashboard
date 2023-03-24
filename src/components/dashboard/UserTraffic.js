@@ -15,8 +15,8 @@ const UserTraffic = () => {
     const [selected, setSelected] = useState('페이지뷰');
 
     const [value, onChange] = useState(new Date());
-    const [mindate, setMinDate] = useState(new Date(2023,2,3));
-    const [maxdate, setMaxDate] = useState(new Date(2023,2,29));
+    const [mindate, setMinDate] = useState(new Date(2023,2,2));
+    const [maxdate, setMaxDate] = useState(new Date(2023,2,31));
     const [today,setToday] = useState(moment(value).format("YYYY년 MM월 DD일"))
     const [date,setDate] = useState(moment(value).format("YYYY-MM-DD"))
     const [data,setData] = useState([])
