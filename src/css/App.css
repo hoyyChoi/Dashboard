@@ -509,9 +509,12 @@ body{
 }
 
 .video-analysis .doughnut {
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  margin-left: 30px;
+  height: 270px;
 }
+
+
 
 .video-card{
   display: flex;
