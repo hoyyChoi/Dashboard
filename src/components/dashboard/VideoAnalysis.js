@@ -1,10 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2'
 import { Dropdown, Selection } from 'react-dropdown-now';
 import 'react-dropdown-now/style.css'
-import "chartjs-plugin-doughnut-innertext"
-import chartjsPluginDoughnutInnertext from 'chartjs-plugin-doughnut-innertext';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -69,7 +67,22 @@ export const dataDisease = {
 
 
 const VideoAnalysis = () => {
-  
+
+  const [selected, setSelected] = useState(false);
+  const [btn,setBtn] = useState(1);
+    const handleSelect = (e) => {
+
+      if(e.target.value === 'true'){
+        setSelected(true)
+      }else{
+        setSelected(false)
+      }
+  };
+
+  const selectButton = (num) =>{
+    setBtn(num)
+  }
+
 
   return (
     <div className='video-analysis'>
@@ -77,6 +90,10 @@ const VideoAnalysis = () => {
         <div className='analysis-title'>
         조회수 분석
         </div>
+        {selected?"":<div className='chartDough-button'>
+          <button style={{width:'83px'}} className={btn===1?'chart-button selectBtn':'chart-button'} onClick={()=>selectButton(1)}>진료과별</button>
+          <button style={{width:'63px'}} className={btn===2?'chart-button selectBtn':'chart-button'} onClick={()=>selectButton(2)}>질환별</button>
+        </div>}
         <Dropdown className='video-dropdown'
             placeholder="Select an option"
             options={['진료', '비진료']}
@@ -89,27 +106,33 @@ const VideoAnalysis = () => {
       </div>
 
       <div className='doughnut'>
-      <Doughnut className='chartDough'
-          data={dataDepartment}
-          options = {{
-            responsive:true,
-            maintainAspectRatio:true,
-            plugins: {
-              legend: {
-                display: true,
-                position: 'right',
-                rtl: false, 
-                labels: {
-                  usePointStyle: true,
-                  pointStyle: 'circle',
-                  padding: 20,
-                }
+        <Doughnut className='chartDough'
+            data={dataDepartment}
+            options = {{
+              layout: {
+                padding: {
+                  bottom: 0
+                },
+                
               },
+              responsive:true,
+              maintainAspectRatio:true,
+              plugins: {
+                legend: {
+                  display: true,
+                  position: 'right',
+                  rtl: false, 
+                  labels: {
+                    usePointStyle: true,
+                    pointStyle: 'circle',
+                    padding: 20,
+                  }
+                },
 
+              }
             }
-          }
-    
-          } />
+      
+            } />
       </div>
     </div>
 
