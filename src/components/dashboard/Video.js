@@ -24,7 +24,6 @@ const Video = () => {
             getLiveTopdepartment()
             .then(res=>{
             const arr = res.data
-            console.log('111',res.data)
             arr.map((item)=>{
                 sub.push(item.subject)
                 hit.push(item.hits)
@@ -65,7 +64,6 @@ const Video = () => {
             getLiveTopdisease()
             .then(res=>{
             const arr = res.data
-            console.log('111',res.data)
             arr.map((item)=>{
                 sub.push(item.subject)
                 hit.push(item.hits)

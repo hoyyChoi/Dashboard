@@ -20,7 +20,7 @@ const Memo = ({item}) => {
     <div className='memo-container'>
         <div className='memo-title'>
             <div className='left-memo-title'>
-                <img src={item.img}/>
+                <img width={32} src={item.img}/>
                 <div className='name'>{item.name}</div>
                 <div className='time'>{item.time}</div>
             </div>

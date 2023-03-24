@@ -10,7 +10,6 @@ const ChartLine = ({data,btn,setBtn,UVbtn,setUVBtn,selected,setSelected}) => {
     const handleSelect = (e) => {
 
       if(e.value === '페이지뷰'){
-        console.log(e.value)
         setSelected('페이지뷰')
       }else if(e.value === 'UV'){
         setSelected('UV')
