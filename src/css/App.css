@@ -1030,6 +1030,7 @@ body{
   align-items: center;
 }
 
+
 .circle{
   width: 7px;
   height: 7px;
@@ -1048,6 +1049,26 @@ body{
 .liveOpen header{
   display: flex;
   width: 261px;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.noLiveheader{
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  padding-top: 20px;
+  width: 309px;
+  height: 51px;
+  background-color: #fafafa;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+
+.noLive {
+  margin-left: 20px;
+  display: flex;
   justify-content: space-between;
   cursor: pointer;
 }
