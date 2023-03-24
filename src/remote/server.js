@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const mediflixAxios = axios.create({
-    baseURL : 'http://3.130.52.15:8080/'
+    baseURL : 'https://api.kusitms27-dashboard.site/'
 });
 
 //Login
