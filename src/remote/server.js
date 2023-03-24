@@ -19,24 +19,21 @@ const getAge=()=>mediflixAxios.get('/userInfo/age');
 
 const getRegion=()=>mediflixAxios.get('/userInfo/region');
 
+//video
+const getTopdepartment=()=>mediflixAxios.get('/videos/topdepartment');
 
+const getTopdisease=()=>mediflixAxios.get('/videos/topdisease');
 
+const getNonmedical=()=>mediflixAxios.get('/videos/topnonmedical');
+
+//video live
+const getLiveTopdepartment=()=>mediflixAxios.get('/lives/topdepartment');
+
+const getLiveTopdisease=()=>mediflixAxios.get('/lives/topdisease');
 
 
 //upload
 const getUpload=()=>mediflixAxios.get('/upload');
 
 
-//video
-const getLive=()=>mediflixAxios.get('/live');
-const getrealtime=()=>mediflixAxios.get('/lives/realtime');
-const getliveTop3=()=>mediflixAxios.get('/lives/top3');
-const getLivetopDepartment=()=>mediflixAxios.get('/lives/topdepartment');
-const getLivetopDisease=()=>mediflixAxios.get('/lives/topdisease');
-const getvideoTop3=()=>mediflixAxios.get('/videos/top3');
-const getVideoTopdepartment=()=>mediflixAxios.get('/videos/topdepartment');
-const getVideoTopDisease=()=>mediflixAxios.get('/videos/topdisease');
-const getTopnonMedical=()=>mediflixAxios.get('/videos/topnonmedical');
-
-
-export {postPageViews,postUv,getFunnels,getDepartment,getAge,getRegion,getUpload, getLive, getrealtime, getliveTop3, getLivetopDepartment, getLivetopDisease, getvideoTop3, getVideoTopdepartment, getVideoTopDisease,getTopnonMedical}
+export {postPageViews,postUv,getFunnels,getDepartment,getAge,getRegion,getUpload,getTopdepartment,getTopdisease,getNonmedical,getLiveTopdepartment,getLiveTopdisease}
