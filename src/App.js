@@ -9,9 +9,10 @@ import MainPage from './components/MainPage';
 function App() {
 
   const [auth,setAuth] = useState(false)
+  
 
   const PrivateRoute = () =>{
-    return auth ? <MainPage/> : <Navigate to="/login"/>
+    return auth ? <MainPage /> : <Navigate to="/login"/>
   }
 
   
@@ -20,7 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<PrivateRoute/>}/>
         {/* <Route path="/login" element={<Login setAuth={setAuth}/>}/> */}
-        <Route path="/login" element={<Login setAuth={setAuth}/>}/>
+        <Route path="/login" element={<Login setAuth={setAuth} />}/>
       </Routes>
     </div>
   );

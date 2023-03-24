@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom"
 import { useNavigate } from 'react-router-dom';
 import "../css/login.css"
 import axios from 'axios'
-import { postLogin, getLogin } from "../remote/server.js";
+import { postLogin, getLogin, postLoginUser } from "../remote/server.js";
 
 const Login = ({setAuth}) => {
     const [errorMessages, setErrorMessages] = useState({});
     const [isSubmitted, setIsSubmitted] = useState(false);
     const navigate = useNavigate();
-
+    const [username,setEmail] = useState('')
+    const [password,setPw] = useState('')
 
        //실험용 data
        const data = [
@@ -25,6 +26,9 @@ const Login = ({setAuth}) => {
     };
 
 
+
+
+
     const handleSubmit = (event) => {
         event.preventDefault();
         // setAuth(true)
@@ -32,21 +36,29 @@ const Login = ({setAuth}) => {
         var {uemail, pass} = document.forms[0];
         //UserAPI 
         const userData = data.find((user) => user.userEmail === uemail.value);
-        
-        if (userData) {
-            if(userData.password !== pass.value) {
-                //Invalid Pw
-                setErrorMessages({ name: "pass", message: errors.pass});
-            } else {
-                console.log("pass login");
-                setIsSubmitted(true)
-                setAuth(true)
-                navigate('/')
-            }
-        } else {
-            //User Not Found
-            setErrorMessages({ name: "uemail", message: errors.uemail});
-        }
+
+        postLoginUser({username,password})
+        .then(res=>{
+            localStorage.setItem("accessToken",res.data.accessToken)
+            console.log(localStorage.getItem("accessToken"))
+            setAuth(true)
+            navigate('/')
+        }).catch(err=>console.log(err))
+
+        // if (userData) {
+        //     if(userData.password !== pass.value) {
+        //         //Invalid Pw
+        //         setErrorMessages({ name: "pass", message: errors.pass});
+        //     } else {
+        //         console.log("pass login");
+        //         setIsSubmitted(true)
+        //         setAuth(true)
+        //         navigate('/')
+        //     }
+        // } else {
+        //     //User Not Found
+        //     setErrorMessages({ name: "uemail", message: errors.uemail});
+        // }
     };
     //JSX Code for Message 
     const renderErrorMessage = (name) => 
@@ -61,12 +73,12 @@ const Login = ({setAuth}) => {
             <form onSubmit={handleSubmit}>
                 <div className="input-container">
                     <label>Email Address </label>
-                    <input type="text" name="uemail" required/>
+                    <input type="text" name="uemail" onChange={e=>setEmail(e.target.value)} required/>
                     {renderErrorMessage("uemail")}
                 </div>
                 <div className="input-container">
                     <label>Password </label>
-                    <input type="password" name="pass" required />
+                    <input type="password" name="pass"  onChange={e=>setPw(e.target.value)} required />
                     {renderErrorMessage("pass")}
                 </div>
                 <div className="button-container">
@@ -75,6 +87,10 @@ const Login = ({setAuth}) => {
             </form>
         </div>
     );
+
+
+
+    
 
     return (
         <div className="login">
