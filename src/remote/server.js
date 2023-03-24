@@ -1,9 +1,8 @@
 import axios from "axios";
 
 const mediflixAxios = axios.create({
-    baseURL : 'https://api.kusitms27-dashboard.site/'
+    baseURL : 'https://kusitms27-dashboard.site/'
 });
-
 //Login
 const postLoginUser=({username,password})=>mediflixAxios.post('/login/form',{username,password});
 
