@@ -19,7 +19,7 @@ const Ranking = () => {
                         <div className='num'>{idx+1}</div>
                         <div className='item'>
                             <div>{item}</div>
-                            <div>+</div>
+                            <div className='vector'><img src='keepVector.svg'></img></div>
                         </div>
                     </li>
                 )

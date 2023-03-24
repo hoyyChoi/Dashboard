@@ -6,7 +6,6 @@ import 'react-dropdown-now/style.css'
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-
 //진료과별
 export const dataDepartment = {
 
@@ -64,13 +63,13 @@ export const dataDisease = {
   ],
 };
 
-
-
 const VideoAnalysis = () => {
+
 
   const [selected, setSelected] = useState(false);
   const [btn,setBtn] = useState(1);
     const handleSelect = (e) => {
+
 
       if(e.target.value === 'true'){
         setSelected(true)
@@ -83,7 +82,37 @@ const VideoAnalysis = () => {
     setBtn(num)
   }
 
-
+  //chart 내부 총 합 function
+  const drawInnerText = (chart) => {
+      let ctx = chart.ctx;
+      ctx.restore();
+      const fontSize = (chart.height / 270).toFixed(2);
+      ctx.font = fontSize + 'em sans-serif';
+      ctx.textBaseline = 'middle';
+      const dataArrValues = chart.config._config.data.datasets[0].data;
+      console.log(dataArrValues.length)
+      const result = dataArrValues.reduce(function add(sum, currValue) {
+        return sum+currValue;
+      }, 0);
+      let text = '총 ' + result + '회'
+        // chart.tooltip._active.length > 0
+        //   ? `${Math.round(
+        //       (dataArrValues[chart.tooltip._active[0].datasetIndex] /
+        //         dataArrValues.reduce((a, b) => a + b)) *
+        //         100
+        //     )}%`
+        //   : `${Math.round(
+        //       (dataArrValues[0] / dataArrValues.reduce((a, b) => a + b)) * 100
+        //     )}%`;
+      // let textX = Math.round((chart.width - ctx.measureText(text).width) / 2);
+      let textX = 42;
+      let textY = 125;
+      console.log(textX,textY);
+      ctx.fillText(text, textX, textY);
+      ctx.fillStyle = '#6A7997';
+      ctx.save();
+    };
+  
   return (
     <div className='video-analysis'>
       <div className='title'>
@@ -95,7 +124,6 @@ const VideoAnalysis = () => {
           <button style={{width:'63px'}} className={btn===2?'chart-button selectBtn':'chart-button'} onClick={()=>selectButton(2)}>질환별</button>
         </div>}
         <Dropdown className='video-dropdown'
-            placeholder="Select an option"
             options={['진료', '비진료']}
             value={'진료'}
             onChange={(value) => console.log('change!', value)}
@@ -106,33 +134,43 @@ const VideoAnalysis = () => {
       </div>
 
       <div className='doughnut'>
-        <Doughnut className='chartDough'
-            data={dataDepartment}
-            options = {{
-              layout: {
-                padding: {
-                  bottom: 0
-                },
-                
+      <Doughnut 
+          data={dataDepartment}
+          options = {{
+            layout: {
+              padding: {
+                bottom: 0
               },
-              responsive:true,
-              maintainAspectRatio:true,
-              plugins: {
-                legend: {
-                  display: true,
-                  position: 'right',
-                  rtl: false, 
-                  labels: {
-                    usePointStyle: true,
-                    pointStyle: 'circle',
-                    padding: 20,
-                  }
-                },
+              
+            },
+            responsive:true,
+            maintainAspectRatio:true,
+            plugins: {
+              legend: {
+                display: true,
+                position: 'right',
+                rtl: false, 
+                labels: {
+                  usePointStyle: true,
+                  pointStyle: 'circle',
+                  padding: 20,
+                }
+              },
 
-              }
             }
-      
-            } />
+          }
+    
+          }
+          plugins = {[
+            {
+              beforeDraw: function(chart)
+              {
+                drawInnerText(chart);
+              },
+              
+            },
+          ]} />
+  
       </div>
     </div>
 

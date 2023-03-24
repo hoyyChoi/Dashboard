@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Connector = () => {
+const Connector = (props) => {
   return (
     <div className='connector'>
-        <img width={26} src='smile.svg'/>
+        <img width={45} src={props.connector}/>
     </div>
   )
 }
