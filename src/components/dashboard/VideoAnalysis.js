@@ -90,7 +90,7 @@ const VideoAnalysis = () => {
       ctx.font = fontSize + 'em sans-serif';
       ctx.textBaseline = 'middle';
       const dataArrValues = chart.config._config.data.datasets[0].data;
-      console.log(dataArrValues.length)
+      // console.log(dataArrValues.length)
       const result = dataArrValues.reduce(function add(sum, currValue) {
         return sum+currValue;
       }, 0);
@@ -107,7 +107,7 @@ const VideoAnalysis = () => {
       // let textX = Math.round((chart.width - ctx.measureText(text).width) / 2);
       let textX = 42;
       let textY = 125;
-      console.log(textX,textY);
+      // console.log(textX,textY);
       ctx.fillText(text, textX, textY);
       ctx.fillStyle = '#6A7997';
       ctx.save();

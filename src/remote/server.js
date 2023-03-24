@@ -20,4 +20,11 @@ const getAge=()=>mediflixAxios.get('/userInfo/age');
 const getRegion=()=>mediflixAxios.get('/userInfo/region');
 
 
-export {postPageViews,postUv,getFunnels,getDepartment,getAge,getRegion}
+//Login
+const postLogin=({form})=>mediflixAxios.post('/login/form', {form});
+const getLogin=()=>mediflixAxios.get('/login/form');
+
+//
+
+
+export {postPageViews,postUv,getFunnels,getDepartment,getAge,getRegion,postLogin,getLogin}

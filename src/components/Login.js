@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom"
 import { useNavigate } from 'react-router-dom';
 import "../css/login.css"
+import axios from 'axios'
+import { postLogin, getLogin } from "../remote/server.js";
 
 const Login = ({setAuth}) => {
     const [errorMessages, setErrorMessages] = useState({});
@@ -9,8 +11,8 @@ const Login = ({setAuth}) => {
     const navigate = useNavigate();
 
 
-    //실험용 data
-    const data = [
+       //실험용 data
+       const data = [
         {
             userEmail: "mshin0905@naver.com",
             password: "pass1"
@@ -40,14 +42,12 @@ const Login = ({setAuth}) => {
                 setIsSubmitted(true)
                 setAuth(true)
                 navigate('/')
-                var {uemail, pass} = document.forms[0];
             }
         } else {
             //User Not Found
             setErrorMessages({ name: "uemail", message: errors.uemail});
         }
     };
-
     //JSX Code for Message 
     const renderErrorMessage = (name) => 
     name === errorMessages.name && (
