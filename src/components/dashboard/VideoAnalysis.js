@@ -6,8 +6,6 @@ import 'react-dropdown-now/style.css'
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-
-
 //진료과별
 export const dataDepartment = {
 
@@ -67,9 +65,11 @@ export const dataDisease = {
 
 const VideoAnalysis = () => {
 
+
   const [selected, setSelected] = useState(false);
   const [btn,setBtn] = useState(1);
     const handleSelect = (e) => {
+
 
       if(e.target.value === 'true'){
         setSelected(true)
