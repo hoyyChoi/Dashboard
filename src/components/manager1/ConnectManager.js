@@ -31,7 +31,7 @@ const ConnectManager = ({setOpen,memoCount,appear,setAppear}) => {
         <Connector id="connect3" connector={img.img3}>
         </Connector>
 
-        <Connector id="connect4" connector={img.default}>
+        <Connector id="connect4" connector={img.img4}>
         </Connector>
   
         <div className='messanger'>
