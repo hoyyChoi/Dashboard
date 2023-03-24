@@ -44,7 +44,7 @@ const ChartLine = ({data,btn,setBtn,UVbtn,setUVBtn,selected,setSelected}) => {
             className="h-64"
             data={data}
             index="d"
-            categories={UVbtn===1?["uv","rv"]:["rvPercentage","nvPercentage"]}
+            categories={UVbtn===1?["UV","재방문"]:["신규방문율","재방문율"]}
             colors={["blue",'orange']}
             showLegend={true}
             showGridLines={false}
@@ -67,7 +67,7 @@ const ChartLine = ({data,btn,setBtn,UVbtn,setUVBtn,selected,setSelected}) => {
             className="h-64"
             data={data}
             index="d"
-            categories={["pageView"]}
+            categories={["페이지뷰"]}
             colors={["blue"]}
             showLegend={true}
             showGridLines={false}
