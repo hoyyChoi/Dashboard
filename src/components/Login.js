@@ -13,7 +13,7 @@ const Login = ({setAuth}) => {
     const [password,setPw] = useState('')
 
        //실험용 data
-       const data = [
+    const data = [
         {
             userEmail: "mshin0905@naver.com",
             password: "pass1"
@@ -36,13 +36,13 @@ const Login = ({setAuth}) => {
         var {uemail, pass} = document.forms[0];
         //UserAPI 
         const userData = data.find((user) => user.userEmail === uemail.value);
-
+        
         postLoginUser({username,password})
         .then(res=>{
             localStorage.setItem("accessToken",res.data.accessToken)
             console.log(localStorage.getItem("accessToken"))
-            setAuth(true)
-            navigate('/')
+                setAuth(true)
+                navigate('/')
         }).catch(err=>console.log(err))
 
         // if (userData) {

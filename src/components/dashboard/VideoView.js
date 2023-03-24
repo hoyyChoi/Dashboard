@@ -12,7 +12,7 @@ const VideoView = () => {
   return (
     <div className='video-view'>
         <div className='VideoTitle'>
-          콘텐츠 조회수 
+          콘텐츠 조회
           <div className='top'>TOP3</div>
         </div>
         <div>

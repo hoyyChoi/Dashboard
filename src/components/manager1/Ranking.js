@@ -3,6 +3,7 @@ import React from 'react'
 const Ranking = () => {
 
     const arr = ['당뇨','개원의','척추 퇴행', 'ADHD', '알츠하이머', '갑상선암']
+    const imgData = ["upVector.svg","downVector.svg","keepVector.svg", "keepVector.svg","upVector.svg","upVector.svg" ]
 
   return (
     <div className="search-ranking">
@@ -19,7 +20,7 @@ const Ranking = () => {
                         <div className='num'>{idx+1}</div>
                         <div className='item'>
                             <div>{item}</div>
-                            <div className='vector'><img src='keepVector.svg'></img></div>
+                            <div className='vector'><img src={imgData[idx]}></img></div>
                         </div>
                     </li>
                 )
