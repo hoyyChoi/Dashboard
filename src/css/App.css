@@ -762,6 +762,10 @@ body{
 
 }
 
+.word-ranking .vector {
+  padding-top: 10px;
+}
+
 .connectManager{
   width: 90px;
   background: #FFFFFF;

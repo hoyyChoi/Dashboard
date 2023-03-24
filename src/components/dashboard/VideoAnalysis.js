@@ -1,25 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2'
 import { Dropdown, Selection } from 'react-dropdown-now';
 import 'react-dropdown-now/style.css'
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-
-const options = {
-  plugins: {
-    legend: {
-      display:false,
-      position: 'right',
-      rtl: true,
-      labels: {
-        usePointStyle: true,
-        pointStyle: 'circle',
-        padding: 20,
-      }
-    }
-  }
-}
 
 
 
@@ -47,60 +32,84 @@ export const dataDepartment = {
         'rgba(51, 97, 255, 0.2)',
         'rgba(107,122,153, 0.9)'
       ],
-      borderWidth: 1,
-      options: options
+      borderWidth: 1
     },
   ],
 };
 
 //질환별 
 export const dataDisease = {
-  labels: ['피부과', '내과', '성형외과','외과', '이비인후과'],
+  labels: ['피부과', '내과', '성형외과','외과', '이비인후과', '기타'],
   datasets: [
     {
-      label: '',
-      data: [39,26,15,32,26,15],
+      label:' ',
+      data: [30,22,20,14,10,4],
+      backgroundColor: [
+        'rgba(51, 97, 255, 1.0)',
+        'rgba(51, 97, 255, 0.8)',
+        'rgba(51, 97, 255, 0.6)',
+        'rgba(51, 97, 255, 0.4)',
+        'rgba(51, 97, 255, 0.2)',
+        'rgba(107,122,153, 0.9)'
+      ],
+      borderColor: [
+        'rgba(51, 97, 255, 1.0)',
+        'rgba(51, 97, 255, 0.8)',
+        'rgba(51, 97, 255, 0.6)',
+        'rgba(51, 97, 255, 0.4)',
+        'rgba(51, 97, 255, 0.2)',
+        'rgba(107,122,153, 0.9)'
+      ],
+      borderWidth: 1
     },
-    {
-      label: '',
-      data: [25,20,20,10,5,5],
-    }
-
-  ]
-}
-
+  ],
+};
 
 const VideoAnalysis = () => {
-  
-  const options = {
-    legend: {
-       labels: {
-          usePointStyle: true  //<-- set this
-       }
-    },
-}
 
+  const [selected, setSelected] = useState(false);
+  const [btn,setBtn] = useState(1);
+    const handleSelect = (e) => {
+
+      if(e.target.value === 'true'){
+        setSelected(true)
+      }else{
+        setSelected(false)
+      }
+  };
+
+  const selectButton = (num) =>{
+    setBtn(num)
+  }
+
+  //chart 내부 총 합 function
   const drawInnerText = (chart) => {
       let ctx = chart.ctx;
       ctx.restore();
-      const fontSize = (chart.height / 114).toFixed(2);
+      const fontSize = (chart.height / 270).toFixed(2);
       ctx.font = fontSize + 'em sans-serif';
       ctx.textBaseline = 'middle';
       const dataArrValues = chart.config._config.data.datasets[0].data;
-      let text =
-        chart.tooltip._active.length > 0
-          ? `${Math.round(
-              (dataArrValues[chart.tooltip._active[0].datasetIndex] /
-                dataArrValues.reduce((a, b) => a + b)) *
-                100
-            )}%`
-          : `${Math.round(
-              (dataArrValues[0] / dataArrValues.reduce((a, b) => a + b)) * 100
-            )}%`;
-      let textX = Math.round((chart.width - ctx.measureText(text).width) / 2);
-      let textY = chart.height / 2 + chart.legend.height / 2;
+      console.log(dataArrValues.length)
+      const result = dataArrValues.reduce(function add(sum, currValue) {
+        return sum+currValue;
+      }, 0);
+      let text = '총 ' + result + '회'
+        // chart.tooltip._active.length > 0
+        //   ? `${Math.round(
+        //       (dataArrValues[chart.tooltip._active[0].datasetIndex] /
+        //         dataArrValues.reduce((a, b) => a + b)) *
+        //         100
+        //     )}%`
+        //   : `${Math.round(
+        //       (dataArrValues[0] / dataArrValues.reduce((a, b) => a + b)) * 100
+        //     )}%`;
+      // let textX = Math.round((chart.width - ctx.measureText(text).width) / 2);
+      let textX = 42;
+      let textY = 125;
+      console.log(textX,textY);
       ctx.fillText(text, textX, textY);
-      ctx.fillStyle = '#fff';
+      ctx.fillStyle = '#6A7997';
       ctx.save();
     };
   
@@ -110,8 +119,11 @@ const VideoAnalysis = () => {
         <div className='analysis-title'>
         조회수 분석
         </div>
+        {selected?"":<div className='chartDough-button'>
+          <button style={{width:'83px'}} className={btn===1?'chart-button selectBtn':'chart-button'} onClick={()=>selectButton(1)}>진료과별</button>
+          <button style={{width:'63px'}} className={btn===2?'chart-button selectBtn':'chart-button'} onClick={()=>selectButton(2)}>질환별</button>
+        </div>}
         <Dropdown className='video-dropdown'
-            placeholder="Select an option"
             options={['진료', '비진료']}
             value={'진료'}
             onChange={(value) => console.log('change!', value)}
@@ -124,14 +136,41 @@ const VideoAnalysis = () => {
       <div className='doughnut'>
       <Doughnut 
           data={dataDepartment}
+          options = {{
+            layout: {
+              padding: {
+                bottom: 0
+              },
+              
+            },
+            responsive:true,
+            maintainAspectRatio:true,
+            plugins: {
+              legend: {
+                display: true,
+                position: 'right',
+                rtl: false, 
+                labels: {
+                  usePointStyle: true,
+                  pointStyle: 'circle',
+                  padding: 20,
+                }
+              },
+
+            }
+          }
+    
+          }
           plugins = {[
             {
-              beforeDraw: function(chart) {
+              beforeDraw: function(chart)
+              {
                 drawInnerText(chart);
               },
+              
             },
-          ]}
-          options = {options} />
+          ]} />
+  
       </div>
     </div>
 
