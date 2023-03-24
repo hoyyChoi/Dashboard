@@ -167,6 +167,11 @@ const VideoAnalysis = () => {
               {
                 drawInnerText(chart);
               },
+              beforeInit: function(chart, options) {
+                chart.legend.afterFit = function() {
+                  this.width = this.width + 100;
+                }
+              }
               
             },
           ]} />
