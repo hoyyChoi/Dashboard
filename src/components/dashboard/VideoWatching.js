@@ -1,28 +1,30 @@
 import React from 'react'
 
-const VideoWatching = (props) => {
+const VideoWatching = ({thumbnail,data,btn1}) => {
 
 
   return (
-    <div className='pre-video'>
-        <div className='video-thumbnail'>
-          <img id="video-img" src={props.thumbnail}></img>
-        </div>
-        <div style={{position:'relative'}}>
-          <div className='video-title'>
-              <div className='video-name'>척추닥터 김사부</div>
-              <div style={{display:'flex'}}>
-                <div className='video-status'>28만회 </div>
-                <div className='video-date'>2023.01.02</div>
-              </div>
+    <a href={data&&data.link}>
+      <div className='pre-video'>
+          <div className='video-thumbnail'>
+            <img id="video-img" src={data&&data.thumbnail}></img>
           </div>
-          <div className='video-tags'>
-            <div className='tag-items'>내과</div>
-            <div className='tag-items'>과자</div>
-            <div className='tag-items'>50대</div>
+          <div style={{position:'relative'}}>
+            <div className='video-title'>
+                <div className='video-name'>{data&&data.title}</div>
+                <div style={{display:'flex'}}>
+                  <div className='video-status'>{data&&data.hit.toString().substr(0, 2)}만회  </div>
+                  <div className='video-date'>  {data&&data.date}</div>
+                </div>
+            </div>
+            <div className='video-tags'>
+              <div className='tag-items'>{data&&data.length}</div>
+              <div className='tag-items'>{data&&data.title.substr(2,4)}</div>
+              <div className='tag-items'>{!btn1?data&&data.age:data&&data.title.substr(0,2)}</div>
+            </div>
           </div>
-        </div>
-    </div>
+      </div>
+    </a>
   )
 }
 
