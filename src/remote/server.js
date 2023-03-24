@@ -4,6 +4,11 @@ const mediflixAxios = axios.create({
     baseURL : 'http://3.130.52.15:8080/'
 });
 
+//Login
+const postLoginUser=({username,password})=>mediflixAxios.post('/login/form',{username,password});
+
+const getProfile=(token)=>mediflixAxios.put('/userinfo',{headers:{authorization:`Bearer ${token}`}});
+
 // userTraffic
 const postPageViews=({category,date})=>mediflixAxios.post('/pageViews',{category,date});
 
