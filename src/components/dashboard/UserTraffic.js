@@ -38,14 +38,12 @@ const UserTraffic = () => {
             postPageViews({category:btn,date:date})
             .then(res=>{
                 setData(res.data.result)
-                console.log(res.data.result)
             })
             .catch((err)=>console.log(err));
         }else{
             postUv({date:date})
             .then(res=>{
                 setData(res.data.result)
-                console.log(res.data.result)
             })
             .catch((err)=>console.log(err));
         }      

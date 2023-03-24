@@ -9,7 +9,6 @@ const Sidebar = () => {
 
     const selectMenu = (idx)=>{
         setMenuNum(idx)
-        console.log(menuNum)
     }   
 
     

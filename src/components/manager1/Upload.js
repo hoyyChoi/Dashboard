@@ -25,10 +25,8 @@ const Upload = () => {
             arr.map((item)=>{
                 if(item.uploadStatus ==='완료'){
                     com.push(item)
-                    console.log('com',com)
                 }else if(item.uploadStatus ==='예정'){
                     exp.push(item)
-                    console.log('item',exp)
                 }
             })
             setComplete(com)
