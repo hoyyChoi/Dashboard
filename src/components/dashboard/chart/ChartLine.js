@@ -1,18 +1,19 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Card, Title, AreaChart } from "@tremor/react";
+import { Dropdown } from 'react-dropdown-now';
 
 
-
-const ChartLine = ({data,btn,setBtn,selected,setSelected}) => {
+const ChartLine = ({data,btn,setBtn,UVbtn,setUVBtn,selected,setSelected}) => {
 
 
     const handleSelect = (e) => {
 
-      if(e.target.value === 'true'){
-        setSelected(true)
-      }else{
-        setSelected(false)
+      if(e.value === '페이지뷰'){
+        console.log(e.value)
+        setSelected('페이지뷰')
+      }else if(e.value === 'UV'){
+        setSelected('UV')
       }
   };
 
@@ -20,23 +21,30 @@ const ChartLine = ({data,btn,setBtn,selected,setSelected}) => {
     setBtn(num)
   }
 
+  const selectUVButton = (num) =>{
+    setUVBtn(num)
+  }
+
 
   return (
     <div>
       <Container >
-          {selected?<Card>
+          {selected!=='페이지뷰'
+          ?<Card>
           <Title style={{display:'flex',justifyContent:'space-between'}}>
             <div></div>
-            <select onChange={handleSelect} value={selected}>  
-              <option value={false}>페이지뷰</option>
-              <option value={true}>이탈률</option>                                        
-            </select>
+            <Dropdown className='info-dropdown'
+            placeholder="Select an option"
+            options={['페이지뷰','UV']}
+            value={selected}
+            onChange={handleSelect}
+            />
           </Title>
           <AreaChart
             className="h-64"
             data={data}
             index="d"
-            categories={["uv","rv"]}
+            categories={UVbtn===1?["uv","rv"]:["rvPercentage","nvPercentage"]}
             colors={["blue",'orange']}
             showLegend={true}
             showGridLines={false}
@@ -48,10 +56,12 @@ const ChartLine = ({data,btn,setBtn,selected,setSelected}) => {
             <Card>
           <Title style={{display:'flex',justifyContent:'space-between'}}>
             <div></div>
-            <select onChange={handleSelect} value={selected}>  
-              <option value={false}>페이지뷰</option>
-              <option value={true}>이탈률</option>                                        
-            </select>
+            <Dropdown className='info-dropdown'
+            placeholder="Select an option"
+            options={['페이지뷰','UV']}
+            value={selected}
+            onChange={handleSelect}
+            />
           </Title>
           <AreaChart
             className="h-64"
@@ -66,7 +76,12 @@ const ChartLine = ({data,btn,setBtn,selected,setSelected}) => {
           />
             </Card>}
         </Container>
-        {selected?"":<div className='chartline-button'>
+        {selected !=='페이지뷰'
+        ?<div className='chartline-button'>
+          <button style={{width:'84px'}} className={UVbtn===1?'chart-button selectBtn':'chart-button'} onClick={()=>selectUVButton(1)}>수치 보기</button>
+          <button style={{width:'84px'}} className={UVbtn===2?'chart-button selectBtn':'chart-button'} onClick={()=>selectUVButton(2)}>비율 보기</button>
+        </div>
+        :<div className='chartline-button'>
           <button style={{width:'93px'}} className={btn===1?'chart-button selectBtn':'chart-button'} onClick={()=>selectButton(1)}>ORIGINAL</button>
           <button style={{width:'59px'}} className={btn===2?'chart-button selectBtn':'chart-button'} onClick={()=>selectButton(2)}>VOD</button>
           <button style={{width:'104px'}} className={btn===3?'chart-button selectBtn':'chart-button'} onClick={()=>selectButton(3)}>DRUG INFO</button>

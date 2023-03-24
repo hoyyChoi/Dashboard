@@ -3,7 +3,7 @@ import { Title } from "@tremor/react";
 import DetailBar from './DetailBar';
 import styled from 'styled-components';
 import {getFunnels,getDepartment,getAge,getRegion} from '../../../remote/server'
-
+import { Dropdown } from 'react-dropdown-now';
 
 
 const ChartBar = () => {
@@ -13,14 +13,13 @@ const ChartBar = () => {
 
   const [selected, setSelected] = useState('유입경로');
   const handleSelect = (e) => {
-
-    if(e.target.value === '유입경로'){
+    if(e.value === '유입경로'){
       setSelected('유입경로')
-    }else if(e.target.value === '진료과'){
+    }else if(e.value === '진료과'){
       setSelected('진료과')
-    }else if(e.target.value === '연령대'){
+    }else if(e.value === '연령대'){
       setSelected('연령대')
-    }else if(e.target.value === '지역별'){
+    }else if(e.value === '지역별'){
       setSelected('지역별')
     }
   };
@@ -60,12 +59,18 @@ const ChartBar = () => {
       <Container>
         <Title style={{display:'flex',justifyContent:'space-between',marginRight:'34px'}}>
             <div></div>
-            <select onChange={handleSelect} value={selected}>  
+            <Dropdown className='info-dropdown'
+            placeholder="Select an option"
+            options={['유입경로', '진료과','연령대','지역별']}
+            value={selected}
+            onChange={handleSelect}
+            />
+            {/* <select onChange={handleSelect} value={selected}>  
               <option value={'유입경로'}>유입경로</option>
               <option value={'진료과'}>진료과</option>
               <option value={'연령대'}>연령대</option>
               <option value={'지역별'}>지역별</option>                                          
-            </select>
+            </select> */}
           </Title>
           <DetailBar data={userInfo} selected={selected}/>
           {/* {selected==='유입경로'
@@ -85,7 +90,7 @@ export default ChartBar
 const Container = styled.div`
   width: 270px;
   margin: auto;
-  margin-top: 12.8px;
+  margin-top: 7px;
 `;
 
 
@@ -96,3 +101,5 @@ const Container = styled.div`
 // const age =[[80,'30대'],[50,'60대'],[45,'40대'],[30,'50대'],[20,'20대'],[10,'70대이상']];
 // const area =[[50,'경기'],[40,'경상'],[30,'서울'],[20,'충청'],[10,'전라'],[5,'기타']];
     
+
+

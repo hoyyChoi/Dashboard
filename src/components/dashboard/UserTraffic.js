@@ -11,7 +11,8 @@ import {postPageViews,postUv} from '../../remote/server'
 const UserTraffic = () => {
     const [open,setOpen] = useState(false)
     const [btn,setBtn] = useState(1);
-    const [selected, setSelected] = useState(false);
+    const [UVbtn,setUVBtn] = useState(1);
+    const [selected, setSelected] = useState('페이지뷰');
 
     const [value, onChange] = useState(new Date());
     const [mindate, setMinDate] = useState(new Date(2023,2,3));
@@ -33,7 +34,7 @@ const UserTraffic = () => {
     }
 
     useEffect(()=>{
-        if(selected === false){
+        if(selected === '페이지뷰'){
             postPageViews({category:btn,date:date})
             .then(res=>{
                 setData(res.data.result)
@@ -80,7 +81,7 @@ const UserTraffic = () => {
                 showNeighboringMonth={false}
                 />
         </Container>:''}
-            <ChartLine data={data} btn={btn} setBtn={setBtn} selected={selected} setSelected={setSelected}/>
+            <ChartLine data={data} btn={btn} setBtn={setBtn} UVbtn={UVbtn} setUVBtn={setUVBtn} selected={selected} setSelected={setSelected}/>
         </div>
     </div>
   )
