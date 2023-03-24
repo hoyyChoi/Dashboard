@@ -249,12 +249,12 @@ const Video = () => {
         </div>
             {btn?
             <div className='video-card'>
-                <VideoView/>
+                <VideoView btn1={btn1}/>
                 <VideoAnalysis selected={selected} setSelected={setSelected} btn={btn} setBtn={setBtn} analy={analy} sum={sum} btn1={btn1}/>
             </div>
             :
             <div className='video-card'>
-                <VideoView/>
+                <VideoView btn1={btn1}/>
                 <VideoAnalysis selected={selected} setSelected={setSelected} btn={btn} setBtn={setBtn} analy={analy} sum={sum} btn1={btn1}/>
             </div>}
     </div>
