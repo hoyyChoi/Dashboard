@@ -16,13 +16,11 @@ const VideoView = ({btn1}) => {
     if(!btn1){
       getTopthree()
       .then(res=>{
-        console.log(res.data.videoData)
         setData(res.data.videoData)
       }).catch(err=>console.log(err))
     }else{
       getLiveTopthree()
       .then(res=>{
-        console.log(res.data.liveData)
         setData(res.data.liveData)
       }).catch(err=>console.log(err))
     }
