@@ -27,4 +27,16 @@ const getRegion=()=>mediflixAxios.get('/userInfo/region');
 const getUpload=()=>mediflixAxios.get('/upload');
 
 
-export {postPageViews,postUv,getFunnels,getDepartment,getAge,getRegion,getUpload}
+//video
+const getLive=()=>mediflixAxios.get('/live');
+const getrealtime=()=>mediflixAxios.get('/lives/realtime');
+const getliveTop3=()=>mediflixAxios.get('/lives/top3');
+const getLivetopDepartment=()=>mediflixAxios.get('/lives/topdepartment');
+const getLivetopDisease=()=>mediflixAxios.get('/lives/topdisease');
+const getvideoTop3=()=>mediflixAxios.get('/videos/top3');
+const getVideoTopdepartment=()=>mediflixAxios.get('/videos/topdepartment');
+const getVideoTopDisease=()=>mediflixAxios.get('/videos/topdisease');
+const getTopnonMedical=()=>mediflixAxios.get('/videos/topnonmedical');
+
+
+export {postPageViews,postUv,getFunnels,getDepartment,getAge,getRegion,getUpload, getLive, getrealtime, getliveTop3, getLivetopDepartment, getLivetopDisease, getvideoTop3, getVideoTopdepartment, getVideoTopDisease,getTopnonMedical}
