@@ -40,5 +40,8 @@ const getLiveTopdisease=()=>mediflixAxios.get('/lives/topdisease');
 //upload
 const getUpload=()=>mediflixAxios.get('/upload');
 
+//
+const getrealtime=()=>mediflixAxios.get('/lives/realtime');
 
-export {postPageViews,postUv,getFunnels,getDepartment,getAge,getRegion,getUpload,getTopdepartment,getTopdisease,getNonmedical,getLiveTopdepartment,getLiveTopdisease}
+
+export {postPageViews,postUv,getFunnels,getDepartment,getAge,getRegion,getUpload,getTopdepartment,getTopdisease,getNonmedical,getLiveTopdepartment,getLiveTopdisease,getrealtime}

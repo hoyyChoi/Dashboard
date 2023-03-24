@@ -1,15 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Collapse from 'react-bootstrap/Collapse';
+import axios from 'axios';
+import { getrealtime } from '../../remote/server';
 
 const Live = () => {
+
+    const [data,setData] = useState({});
+
+    useEffect(() => {
+        getrealtime()
+        .then(res => {
+            setData(res.data)
+        })
+    })
+
 
     const [open, setOpen] = useState(false);
 
     //live일때 
     const [live, setLive] = useState(true);
 
-
   return (
+
     <div>
         <div className={open ? 'liveOpen':'liveClose'}>
             <header onClick={() => setOpen(!open)}
@@ -23,12 +35,14 @@ const Live = () => {
         <Collapse in={open}>
             {live?             
             <div id="example-collapse-text">
-                <div className='thumbnail'></div>
+                <div className='thumbnail'>
+                    <img src={data.thumbnail}/>
+                </div>
                 <div className='header'>
-                    <div className='title'>척추 퇴행 질환과 치료 Part.2</div>
+                    <div className='title'>{data.title}</div>
                     <div className='option'>
-                        <div>유정현 3000명 시청중</div>
-                        <div>13:00 ~ 14:30</div>
+                        <div>유정현 {data.people}명 시청 중</div>
+                        <div>{data.startTime} ~ {data.endTime}</div>
                     </div>
                 </div>
                 
