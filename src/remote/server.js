@@ -10,4 +10,14 @@ const postPageViews=({category,date})=>mediflixAxios.post('/pageViews',{category
 
 const postUv=({date})=>mediflixAxios.post('/uv',{date});
 
-export {postPageViews,postUv}
+
+const getFunnels=()=>mediflixAxios.get('/userInfo/funnels');
+
+const getDepartment=()=>mediflixAxios.get('/userInfo/department');
+
+const getAge=()=>mediflixAxios.get('/userInfo/age');
+
+const getRegion=()=>mediflixAxios.get('/userInfo/region');
+
+
+export {postPageViews,postUv,getFunnels,getDepartment,getAge,getRegion}

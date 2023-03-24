@@ -677,6 +677,14 @@ body{
   justify-content: space-between;
 }
 
+.info-dropdown{
+  width: 90px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+}
+
 
 /* manager 관리 계정 */
 
@@ -1217,7 +1225,7 @@ body{
 .chartline-button{
   float: right;
   margin-right: 24px;
-  margin-top: 24px;
+  margin-top: 14px;
 }
 
 .chart-button{

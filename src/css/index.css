@@ -66,10 +66,18 @@ code {
 }
 
 .p-6 {
-  padding:0.8rem 1.5rem 1.5rem 1.5rem;
+  padding:7px 1.5rem 0.4rem 1.5rem;
 }
 
 
 .shadow {
   box-shadow:none !important;
+}
+
+.status-header .rdn-control{
+  padding: 0;
+}
+
+.rdn-control-arrow-icon{
+  top: 16px;
 }
