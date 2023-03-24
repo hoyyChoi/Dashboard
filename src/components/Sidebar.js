@@ -29,7 +29,7 @@ const Sidebar = () => {
                     </li>
                 )})}
             </div>
-            <div className='toggle'>토글?(굳이)</div>
+            <div className='toggle'></div>
         </div>
   )
 }

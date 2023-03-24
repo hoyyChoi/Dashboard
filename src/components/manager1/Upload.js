@@ -13,14 +13,15 @@ const Upload = () => {
     const [expect,setExpect] =useState([])
     const [complete,setComplete] = useState([]);
 
-    let com =[]
-    let exp = []
+    
 
     useEffect(()=>{
         getUpload()
         .then(res=>{
             setUpload(res.data)
             const arr = res.data.result
+            let com =[]
+            let exp = []
             arr.map((item)=>{
                 if(item.uploadStatus ==='완료'){
                     com.push(item)
